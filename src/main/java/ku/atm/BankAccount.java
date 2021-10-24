@@ -26,7 +26,9 @@ public class BankAccount {
       Deposits money into the account.
       @param amount the amount of money to withdraw
    */
-   public void deposit(double amount) {
+   public void deposit(double amount) throws NegativeNumberException {
+      if (amount < 0)
+         throw new NegativeNumberException("cannot deposit with negative amount");
       balance = balance + amount;
    }
 

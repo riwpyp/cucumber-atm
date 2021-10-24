@@ -8,7 +8,7 @@ import java.util.Scanner;
    A text-based simulation of an automatic teller machine.
  */
 public class ATMConsoleUI {
-	public void start() {
+	public void start() throws NegativeNumberException {
 		ATM theATM;
         Bank theBank = new Bank();
 		//readCustomers("customers.txt", theBank);

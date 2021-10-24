@@ -29,7 +29,10 @@ public class Bank {
       matches
    */
    public Customer findCustomer(int aNumber) {
-	  return customers.get(aNumber);
+	  if (customers.containsKey(aNumber)){
+	     return customers.get(aNumber);
+      }
+	  return null;
    }
    
    private Map<Integer, Customer> customers;

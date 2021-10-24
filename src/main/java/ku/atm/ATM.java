@@ -41,7 +41,6 @@ public class ATM {
 	 */
 	public boolean validateCustomer(int customerNum, int pin) {
 		if (state == START) {
-
             if (theBank.findCustomer(customerNum) != null &&
                     theBank.findCustomer(customerNum).match(pin)) {
                 customerNumber = customerNum;
@@ -62,6 +61,7 @@ public class ATM {
 	 */
 	public void withdraw(double value) throws NotEnoughBalanceException {
 		if (state == TRANSACT) {
+
             currentAccount.withdraw(value);
         }
 	}
@@ -71,7 +71,7 @@ public class ATM {
       (Precondition: state is TRANSACT)
       @param value the amount to deposit
 	 */
-	public void deposit(double value) {
+	public void deposit(double value) throws NegativeNumberException {
         if (state == TRANSACT) {
             currentAccount.deposit(value);
         }
@@ -89,7 +89,7 @@ public class ATM {
         return -1;
 	}
 
-	public void transfer(int customerNum, double amount) throws NotEnoughBalanceException {
+	public void transfer(int customerNum, double amount) throws NotEnoughBalanceException , NegativeNumberException {
         if (state == TRANSACT) {
             Customer receivingCustomer = theBank.findCustomer(customerNum);
             BankAccount receivingAccount = receivingCustomer.getAccount();
