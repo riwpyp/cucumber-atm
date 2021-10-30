@@ -15,5 +15,5 @@ Scenario: Incorrect pin
     Then I cannot login
 
 Scenario: Incorrect id
-    When I login to ATM with id 2 and pin 222
+    When I login to ATM with id 3 and pin 123
     Then I cannot login

@@ -12,7 +12,7 @@ Scenario: Deposit normal amount to my balance
     Then my account balance is 400
 
 Scenario: Deposit negative amount to my balance
-    When I deposit negative -200.0 to my account
+    When I deposit negative -500.0 to my account
     Then my account balance is 200
 
 
